@@ -55,7 +55,7 @@ void TodoList::string_copy(char* dest, const char* src) const {
 void TodoList::add_task(const char* task) {
     // TODO: if full, throw. otherwise allocate and copy new task
     int i=0;
-    while(tasks[i] != nullptr) i++;
+    while(tasks[i] != nullptr && i < MAX_TASKS) i++;
     if(i == MAX_TASKS){
         throw std::out_of_range("tasks are full");
     }
